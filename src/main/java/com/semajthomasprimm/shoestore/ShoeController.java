@@ -10,4 +10,9 @@ public class ShoeController {
     public String index(){
         return "index";
     }
+
+    @GetMapping("/shop")
+    public String shop(){
+        return "/shop";
+    }
 }
