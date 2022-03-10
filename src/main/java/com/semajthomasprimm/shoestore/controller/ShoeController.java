@@ -1,4 +1,4 @@
-package com.semajthomasprimm.shoestore;
+package com.semajthomasprimm.shoestore.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
