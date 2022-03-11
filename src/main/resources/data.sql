@@ -1,0 +1,3 @@
+INSERT INTO products(name, sizes, quantity, price, description) VALUES ('Air Jordan 1 Mid', 'US M8/ W9.5,US M8.5/ W10,US M9/ W10.5,US M9.5 / W11', 1,130,'Inspired by the original AJ1, the Air Jordan 1 Mid offers fans a chance to follow in MJ''s footsteps. Fresh colour trims the clean, classic materials, imbuing modernity into a classic design.');
+
+INSERT INTO products(name, sizes, quantity, price, description) VALUES ('Jordan Max Aura 3', 'US M8/ W9.5,US M8.5/ W10,US M9/ W10.5,US M9.5 / W11', 1,130,'Get your piece of Jordan history and heritage in the Jordan Max Aura 3. Inspired by the brand''s rich legacy of performance basketball, it has the energy of a game shoe and a design that puts a fresh spin on classic details.');
