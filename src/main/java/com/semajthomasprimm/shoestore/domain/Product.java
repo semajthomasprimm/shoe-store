@@ -1,13 +1,12 @@
 package com.semajthomasprimm.shoestore.domain;
 
 import java.io.Serializable;
-import java.util.List;
 
 public class Product implements Serializable {
 
     private int id = 0;
     private String name;
-    private List<String> sizes;
+    private String sizes;
     private int quantity = 1;
     private double price;
     private String description;
@@ -30,11 +29,11 @@ public class Product implements Serializable {
         this.name = name;
     }
 
-    public List<String> getSizes() {
+    public String getSizes() {
         return sizes;
     }
 
-    public void setSizes(List<String> sizes) {
+    public void setSizes(String sizes) {
         this.sizes = sizes;
     }
 
@@ -62,13 +61,4 @@ public class Product implements Serializable {
         this.description = description;
     }
 
-    public String getDate_added() {
-        return date_added;
-    }
-
-    public void setDate_added(String date_added) {
-        this.date_added = date_added;
-    }
-
-    private String date_added;
 }
