@@ -15,6 +15,15 @@
 </head>
 <body>
     <div th:replace="fragments/navbar (quantity=${cart.getQuantity()})"></div>
-    <p>Cart</p>
+    <div class="container my-5">
+        <h1>Cart</h1>
+        <div th:if="${cart.getQuantity() == 0}">
+            <p>There are no items in your cart.</p>
+        </div>
+        <div th:unless="${cart.getQuantity() == 0}">
+            <p>Cart items</p>
+        </div>
+    </div>
+    <div th:replace="fragments/footer"></div>
 </body>
 </html>

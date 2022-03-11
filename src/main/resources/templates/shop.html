@@ -14,7 +14,10 @@
     <link rel="stylesheet" th:rel="stylesheet" href="/static/css/fontawesome.min.css" th:href="@{css/fontawesome.min.css}">
 </head>
 <body>
-<div th:replace="fragments/navbar (quantity=${cart.getQuantity()})"></div>
-    <p>Shop</p>
+    <div th:replace="fragments/navbar (quantity=${cart.getQuantity()})"></div>
+    <div class="container my-5">
+        <h1>Shop</h1>
+    </div>
+    <div th:replace="fragments/footer"></div>
 </body>
 </html>
