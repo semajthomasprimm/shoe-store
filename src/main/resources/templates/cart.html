@@ -16,12 +16,34 @@
 <body>
     <div th:replace="fragments/navbar (quantity=${cart.getQuantity()})"></div>
     <div class="container my-5">
-        <h1>Cart</h1>
-        <div th:if="${cart.getQuantity() == 0}">
-            <p>There are no items in your cart.</p>
-        </div>
-        <div th:unless="${cart.getQuantity() == 0}">
-            <p>Cart items</p>
+        <div class="row">
+            <div class="col-8">
+                <h2>Cart</h2>
+                <span th:if="${cart.getQuantity() == 0}">
+                    <p>There are no items in your cart.</p>
+                </span>
+                <span th:unless="${cart.getQuantity() == 0}">
+                    Cart items
+                </span>
+            </div>
+            <div class="col-4">
+                <h2>Summary</h2>
+                <div class="row my-3">
+                    <div class="col">Subtotal</div>
+                    <div class="col text-end">$0.00</div>
+                </div>
+                <div class="row my-3">
+                    <div class="col">Taxes</div>
+                    <div class="col text-end">&dash;</div>
+                </div>
+                <div class="row my-3">
+                    <div class="col">Total</div>
+                    <div class="col text-end">$0.00</div>
+                </div>
+                <div class="row my-3">
+                    <button class="btn btn-primary text-center">Guest Checkout</button>
+                </div>
+            </div>
         </div>
     </div>
     <div th:replace="fragments/footer"></div>
