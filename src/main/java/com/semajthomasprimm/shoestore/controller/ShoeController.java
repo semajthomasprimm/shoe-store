@@ -6,6 +6,7 @@ import com.semajthomasprimm.shoestore.domain.Product;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -32,6 +33,14 @@ public class ShoeController {
         model.addAttribute("cart", cart);
         model.addAttribute("products", products);
         return "shop";
+    }
+
+    @GetMapping("/view-product")
+    public String viewProduct(@RequestParam String id, Model model){
+        Product product = productDataService.getProduct(Integer.parseInt(id));
+        model.addAttribute("cart", cart);
+        model.addAttribute("product", product);
+        return "viewproduct";
     }
 
     @GetMapping("/cart")
