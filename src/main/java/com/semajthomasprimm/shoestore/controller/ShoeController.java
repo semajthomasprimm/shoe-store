@@ -1,12 +1,23 @@
 package com.semajthomasprimm.shoestore.controller;
 
+import com.semajthomasprimm.shoestore.database.ProductDataServiceImpl;
 import com.semajthomasprimm.shoestore.domain.Cart;
+import com.semajthomasprimm.shoestore.domain.Product;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @Controller
 public class ShoeController {
+
+    private final ProductDataServiceImpl productDataService;
+
+    public ShoeController(ProductDataServiceImpl productDataService) {
+        this.productDataService = productDataService;
+    }
 
     Cart cart = new Cart();
 
@@ -16,8 +27,11 @@ public class ShoeController {
     }
 
     @GetMapping("/shop")
-    public ModelAndView shop(){
-        return new ModelAndView("/shop", "cart", cart);
+    public String shop(Model model){
+        List<Product> products = productDataService.getProducts();
+        model.addAttribute("cart", cart);
+        model.addAttribute("products", products);
+        return "shop";
     }
 
     @GetMapping("/cart")
