@@ -44,7 +44,7 @@ public class Cart implements Serializable {
     }
 
     // Returns total of items prices
-    public double getPriceTotal(){
-        return priceTotal;
+    public String getPriceTotal(){
+        return "$" + String.format("%,.2f", priceTotal);
     }
 }

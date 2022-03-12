@@ -14,15 +14,15 @@
     <link rel="stylesheet" th:rel="stylesheet" href="/static/css/fontawesome.min.css" th:href="@{css/fontawesome.min.css}">
 </head>
 <body>
-    <div th:replace="fragments/navbar (quantity=${cart.getQuantity()})"></div>
+    <div th:replace="fragments/navbar (quantity=${cart.quantity})"></div>
     <div class="container my-5">
         <div class="row">
             <div class="col-8">
                 <h2>Cart</h2>
-                <span th:if="${cart.getQuantity() == 0}">
+                <span th:if="${cart.quantity == 0}">
                     <p>There are no items in your cart.</p>
                 </span>
-                <span th:unless="${cart.getQuantity() == 0}">
+                <span th:unless="${cart.quantity == 0}">
                     Cart items
                 </span>
             </div>
@@ -30,7 +30,7 @@
                 <h2>Summary</h2>
                 <div class="row my-3">
                     <div class="col">Subtotal</div>
-                    <div class="col text-end">$0.00</div>
+                    <div class="col text-end" th:text="${cart.getPriceTotal()}">$0.00</div>
                 </div>
                 <div class="row my-3">
                     <div class="col">Taxes</div>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="row my-3">
                     <div class="col">Total</div>
-                    <div class="col text-end">$0.00</div>
+                    <div class="col text-end" th:text="${cart.getPriceTotal()}">$0.00</div>
                 </div>
                 <div class="row my-3">
                     <button class="btn btn-primary text-center">Guest Checkout</button>
