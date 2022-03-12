@@ -61,4 +61,8 @@ public class Product implements Serializable {
         this.description = description;
     }
 
+    public String formatPrice(double price){
+        return "$" + String.format("%,.2f", price);
+    }
+
 }
